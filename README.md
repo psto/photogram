@@ -1,4 +1,4 @@
-Picturegram
+# Picturegram
 
 A shameless copy of Instagram in Ruby on Rails.
 

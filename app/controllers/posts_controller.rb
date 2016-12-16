@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :owned_post, only: [:edit, :update, :destroy]
 
   def index
-    @posts = Post.all.order(created_at: :desc)
+    @posts = Post.all.order('created_at DESC').page params[:page]
   end
 
   def show
@@ -32,23 +32,23 @@ class PostsController < ApplicationController
   def update
     if @post.update(post_params)
       flash[:success] = "Post updated."
-      redirect_to post_url(@post)
+      redirect_to posts_path
     else
-      flash.now[:alert] = "Update failed. Please check the form."
+      flash[:alert] = "Update failed.  Please check the form."
       render :edit
     end
   end
 
   def destroy
     @post.destroy
-    flash[:notice] = "Your post have been deleted."
-    redirect_to root_url
+    flash[:success] = "Your post has been deleted."
+    redirect_to root_path
   end
 
   private
 
     def post_params
-      params.require(:post).permit(:caption, :image)
+      params.require(:post).permit(:image, :caption)
     end
 
     def set_post
@@ -61,4 +61,5 @@ class PostsController < ApplicationController
         redirect_to root_path
       end
     end
+
 end

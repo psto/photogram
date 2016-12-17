@@ -163,7 +163,7 @@ body {
 .registration-bg {
   padding-top: 4em;
   height: 100%;
-  background-image: url(regbackg.jpg);
+  background-image: url(jump.jpg);
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
@@ -173,7 +173,7 @@ body {
 .login-bg {
   padding-top: 4em;
   height: 100%;
-  background-image: url(loginbg.jpg);
+  background-image: url(broadway.jpg);
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
@@ -240,4 +240,36 @@ body {
       color: #A5A7AA;
     }
   }
+}
+
+#user_avatar {
+  margin: 20px auto;
+}
+
+.profile-header {
+  padding: 20px 0;
+}
+
+.profile-image {
+  margin: 20px auto;
+  height: 152px;
+  width: 152px;
+}
+
+.user-name-and-follow {
+  display: inline;
+}
+
+.profile-user-name {
+  display: inline;
+}
+
+.edit-button {
+  border-color: #818488;
+  color: #818488;
+  margin-left: 20px;
+}
+
+.profile-bio {
+  margin-top: 20px;
 }
